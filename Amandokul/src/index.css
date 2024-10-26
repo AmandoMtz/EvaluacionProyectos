@@ -7,6 +7,7 @@ body {
   align-items: center;
   margin: 0;
   padding-top: 80px; /* Espacio para el encabezado fijo */
+  min-height: 100vh; /* Para que el pie de página esté al fondo */
 }
 
 h1 {
@@ -47,7 +48,7 @@ header h1 {
 
 /* Formulario de registro */
 .registration-form {
-  width: 500px; /* Ancho del formulario */
+  width: 300px; /* Ancho ajustado del formulario */
   text-align: center; /* Centra el contenido dentro del formulario */
 }
 
@@ -118,6 +119,107 @@ footer {
   font-size: 0.8rem;
   color: #666;
   text-align: center;
+  margin-top: auto;
+  padding: 10px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fdf5e6;
+}
+
+/* Estilos para el componente de carga de identificación */
+.identification-upload-container {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  background-color: #f8f7f3;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
+.identification-upload-container h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Select y botón de archivo */
+.identification-upload-container select,
+.identification-upload-container .upload-button,
+.identification-upload-container button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.identification-upload-container select {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Botón de subir archivo */
+.upload-label {
+  display: inline-block;
+  background-color: #ffe600;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.upload-label:hover {
+  background-color: #f0d600;
+}
+
+/* Nombre del archivo */
+.file-name {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Botón de continuar */
+.identification-upload-container button {
+  background-color: #ffe600;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 0;
+}
+
+.identification-upload-container button:hover {
+  background-color: #f0d600;
+}
+
+/* Texto de advertencia */
+.identification-upload-container p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Ícono de identificación */
+.identification-icon {
+  width: 100px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+/* Selección de documento */
+.document-select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './index.css';
 import robotImage from './assets/robot.png';
+import Login from './Login.jsx';
 
-function App() {
+
+function Registration() {
   const [formData, setFormData] = useState({
     nombre: '',
     apellidoMaterno: '',
@@ -12,13 +15,11 @@ function App() {
     domicilio: ''
   });
 
-  // Manejar cambios en los campos del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -62,13 +63,24 @@ function App() {
             <button type="submit">Continuar</button>
           </form>
           <p>Al crear una cuenta, aceptas las <a href="#">Condiciones de Uso</a> y el <a href="#">Aviso de Privacidad</a> de Chopping.</p>
-          <p>¿Ya tienes una cuenta? <a href="#">Inicia sesión</a></p>
+          <p>¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link></p>
         </div>
       </div>
       <footer>
         © 2023-2024, Chopping, Inc. o sus afiliados
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 

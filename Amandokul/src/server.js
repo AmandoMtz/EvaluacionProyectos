@@ -23,8 +23,8 @@ db.connect((err) => {
 });
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Permite solicitudes CORS desde cualquier origen
+app.use(express.json()); // Permite recibir datos en formato JSON
 
 // Ruta para registrar un nuevo usuario
 app.post('/api/register', (req, res) => {
@@ -35,9 +35,29 @@ app.post('/api/register', (req, res) => {
 
   db.query(sql, values, (err, result) => {
     if (err) {
+      console.error('Error al registrar usuario:', err);
       res.status(500).json({ message: 'Error al registrar usuario', error: err });
     } else {
       res.status(201).json({ message: 'Usuario registrado con éxito' });
+    }
+  });
+});
+
+// Ruta para iniciar sesión
+app.post('/api/login', (req, res) => {
+  const { correo, contrasena } = req.body;
+
+  const sql = 'SELECT * FROM usuarios WHERE correo = ? AND contrasena = ?';
+  const values = [correo, contrasena];
+
+  db.query(sql, values, (err, results) => {
+    if (err) {
+      console.error('Error al iniciar sesión:', err);
+      res.status(500).json({ message: 'Error al iniciar sesión', error: err });
+    } else if (results.length > 0) {
+      res.status(200).json({ message: 'Inicio de sesión exitoso' });
+    } else {
+      res.status(401).json({ message: 'Credenciales incorrectas' });
     }
   });
 });
