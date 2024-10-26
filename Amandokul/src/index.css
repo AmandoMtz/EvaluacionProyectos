@@ -1,0 +1,123 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf5e6; /* Color de fondo similar al beige */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding-top: 80px; /* Espacio para el encabezado fijo */
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  background-color: #ffe600; /* Fondo amarillo brillante */
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: black;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Contenedor principal del formulario con contorno */
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  padding: 30px;
+  border: 2px solid black; /* Contorno negro */
+  border-radius: 12px;
+  background-color: white;
+}
+
+/* Formulario de registro */
+.registration-form {
+  width: 500px; /* Ancho del formulario */
+  text-align: center; /* Centra el contenido dentro del formulario */
+}
+
+.registration-form img {
+  width: 100px;
+  height: auto;
+  margin: 10px auto; /* Ajuste automático para centrar */
+  display: block; /* Centra la imagen dentro del contenedor */
+}
+
+.outlined-text {
+  color: #333;
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Campos de entrada */
+.registration-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.registration-form input::placeholder {
+  color: #bbb;
+}
+
+/* Botón de continuar */
+.registration-form button {
+  background-color: #ffe600; /* Color del botón */
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.registration-form button:hover {
+  background-color: #f0d600;
+}
+
+/* Texto de condiciones */
+.registration-form p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.registration-form a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registration-form a:hover {
+  text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}
+
